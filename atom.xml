@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://junqinyang.github.io</id>
     <title>Junqin的博客</title>
-    <updated>2021-02-19T03:08:51.112Z</updated>
+    <updated>2021-02-19T03:19:52.120Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://junqinyang.github.io"/>
     <link rel="self" href="https://junqinyang.github.io/atom.xml"/>
@@ -15,14 +15,16 @@
         <id>https://junqinyang.github.io/post/about/</id>
         <link href="https://junqinyang.github.io/post/about/">
         </link>
-        <updated>2019-01-25T11:09:48.000Z</updated>
+        <updated>2021-02-19T03:18:56.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
 <h2 id="关于本站">🏠 关于本站</h2>
 <p>这里是Junqin的个人博客，平时分享技术文章，也会分享读书感受和心情。</p>
 <h2 id="博主是谁">👨‍💻 博主是谁</h2>
+<p>广州大学本科生/数码爱好者/社会学民间观察员（不是😝</p>
 <h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
+<p>就俩字儿——折腾！👨‍💻</p>
 <h2 id="联系我呀">📬 联系我呀</h2>
 <p>junqinyang957@gmail.com</p>
 ]]></content>
