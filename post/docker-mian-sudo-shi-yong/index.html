@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>个人信息 | Junqin的博客</title>
+<title>docker免sudo使用 | Junqin的博客</title>
 
 <link rel="shortcut icon" href="https://junqinyang.github.io/favicon.ico?v=1616053995689">
 
@@ -33,11 +33,11 @@
 <!--<script src="media/scripts/index.js"></script>-->
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <style>
+    <style>
     /* 导航栏样式 */
     .navbar {
         position: relative;
@@ -198,45 +198,96 @@
         }
     }
 </script>
-        <div class="current-tag-container">
-            <h2 class="title gt-c-content-color-first">
-                #个人信息
-            </h2>
-        </div>
-        <div class="post-list-container">
-    <div class="post-inner">
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://junqinyang.github.io/post/about/">
-                            <span class="post-title gt-c-content-color-first">关于Junqin</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2021-02-19 ·
-                        </time>
-                        
-                            <a href="https://junqinyang.github.io/tag/rZfhE_das/" class="post-tag">
-                                # 个人信息
-                            </a>
-                        
-                    </div>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    docker免sudo使用
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-03-18 ·
+                    </time>
+                    
                 </div>
-                
+                <div class="post-content">
+                    <p>操作系统：Linux<br>
+安装完docker之后，发现每次使用docker命令都要加上sudo权限，非常麻烦，但是可以将用户加入docker组里来避免。</p>
+<h2 id="检查系统有无docker组">检查系统有无docker组</h2>
+<pre><code class="language-shell">cat /etc/group
+</code></pre>
+<h2 id="若没有docker组">若没有docker组</h2>
+<p>创建docker组即可：</p>
+<pre><code class="language-shell">sudo newgrp docker
+</code></pre>
+<h2 id="若有docker组">若有docker组</h2>
+<p>直接将用户加入docker组：</p>
+<pre><code class="language-shell">sudo usermod -aG docker $USER
+</code></pre>
+<p>再重新启动docker的service：</p>
+<pre><code class="language-shell">systemctl restart docker
+</code></pre>
+<p>完成。</p>
+<h2 id="讲解">讲解</h2>
+<h3 id="newgrp命令">newgrp命令</h3>
+<p>创建及修改Linux的组，本次使用该命令简单创建了一个docker组，在该组内的用户都可以直接使用docker命令。</p>
+<h3 id="usermod命令">usermod命令</h3>
+<p>看名字就知道是对用户的模式进行修改的，参数 -a 和 -G 一般和在一起用。</p>
+<ul>
+<li>-a即是append，将用户加入提及的组</li>
+<li>-G即是GROUPS</li>
+</ul>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://junqinyang.github.io/post/about/" class="post-title gt-a-link">
+                    关于Junqin
+                </a>
             </div>
         
-    </div>
-</div>
-        <div class="pagination-container">
-    
-    
-</div>
+
+        
+            <span id="/post/docker-mian-sudo-shi-yong/" class="leancloud_visitors" data-flag-title="docker免sudo使用">
+                <em class="post-meta-item-text">阅读量 </em>
+                <i class="leancloud-visitors-count">0</i>
+            </span>
+        
+
+        
+
+        
+            <script src='https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js'></script>
+
+<style>
+	div#vcomments{
+		width:100%;
+		max-width: 1000px;
+		padding: 2.5%
+	}
+</style>
+
+
+	<div id="vcomments"></div>
+
+<script>
+	new Valine({
+		el: '#vcomments',
+		appId: '8xXzJ2XniXTw4btTWj1WsQvG-gzGzoHsz',
+		appKey: '4MeTBWIREY3l4yKrPPhjSFce',
+		avatar: '',
+		pageSize: 10,
+		recordIp: false,
+		placeholder: 'Just Go Go',
+		visitor: true,
+	});
+</script>
+
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">未经审视的人生不值得过。</div>
